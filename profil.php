@@ -26,8 +26,7 @@ if(isset($_SESSION['login']) && $_SESSION['login']!='admin'){
       $connexion->execute(array(':login' => $login1));
       $userExists = $connexion->rowcount();
       $connexionfetch=$connexion->fetchall(PDO::FETCH_ASSOC);
-      var_dump($connexionfetch);
-      var_dump($userExists);
+      
       
     if($userExists>0){
       $message="ce pseudo existe déjà";
@@ -39,6 +38,8 @@ if(isset($_SESSION['login']) && $_SESSION['login']!='admin'){
       $connexion->bindValue(':login',$oldlogin ,PDO::PARAM_STR);
       $connexion->bindValue(':login1',$login1 ,PDO::PARAM_STR);
       $connexion->execute();
+
+
       $_SESSION['login']=$login1;
 
     if(strlen($_POST['password'])>=6){

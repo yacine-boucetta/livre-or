@@ -24,7 +24,7 @@ if(isset($_SESSION['login'])){
 
 
 
- <form method='post' >
+<form method='post' >
 
 <p>Laissez nous un commentaire !</p>
 <p>
